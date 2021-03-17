@@ -99,15 +99,15 @@ const ActionButton = props => {
         inputRange: [0, 1],
         outputRange: [props.buttonColor, props.btnOutRange || props.buttonColor]
       }),
-      width: props.size,
-      height: props.size,
-      borderRadius: props.size / 2
+      borderRadius: props.borderRadius,
+      paddingVertical: props.paddingVertical,
+      paddingHorizontal: props.paddingHorizontal
     };
 
     const buttonStyle = {
-      width: props.size,
-      height: props.size,
-      borderRadius: props.size / 2,
+      borderRadius: props.borderRadius,
+      paddingVertical: props.paddingVertical,
+      paddingHorizontal: props.paddingHorizontal,
       alignItems: "center",
       justifyContent: "center"
     };
@@ -342,6 +342,9 @@ ActionButton.propTypes = {
   offsetY: PropTypes.number,
   spacing: PropTypes.number,
   size: PropTypes.number,
+  borderRadius: PropTypes.number,
+  paddingHorizontal: PropTypes.number,
+  paddingVertical: PropTypes.number,
   autoInactive: PropTypes.bool,
   onPress: PropTypes.func,
   onPressIn: PropTypes.func,
@@ -381,6 +384,9 @@ ActionButton.defaultProps = {
   offsetX: 30,
   offsetY: 30,
   size: 56,
+  borderRadius: 28,
+  paddingHorizontal: 0,
+  paddingVertical: 0,
   verticalOrientation: "up",
   backgroundTappable: false,
   useNativeFeedback: true,
